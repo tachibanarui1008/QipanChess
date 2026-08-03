@@ -1,0 +1,241 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* libGameCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000002 /* libGameCore.a */; };
+		B00000000000000000000002 /* libAnalysis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* libAnalysis.a */; };
+		B00000000000000000000003 /* libEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000004 /* libEngine.a */; };
+		B00000000000000000000004 /* libInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000005 /* libInterface.a */; };
+		B00000000000000000000005 /* stockfish in Resources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000006 /* stockfish */; platformFilters = (macos,); };
+		B00000000000000000000006 /* QipanStockfishBridge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000007 /* QipanStockfishBridge.xcframework */; platformFilters = (ios,); };
+		B00000000000000000000007 /* QipanStockfishBridge.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00000000000000000000007 /* QipanStockfishBridge.xcframework */; platformFilters = (ios,); };
+		B00000000000000000000008 /* nn-c288c895ea92.nnue in Resources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000008 /* nn-c288c895ea92.nnue */; platformFilters = (ios,); };
+		B00000000000000000000009 /* nn-37f18f62d772.nnue in Resources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000009 /* nn-37f18f62d772.nnue */; platformFilters = (ios,); };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E00000000000000000000001 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000002; remoteInfo = GameCore; };
+		E00000000000000000000002 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000003; remoteInfo = Analysis; };
+		E00000000000000000000003 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000004; remoteInfo = Engine; };
+		E00000000000000000000004 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000005; remoteInfo = Interface; };
+		E00000000000000000000005 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000002; remoteInfo = GameCore; };
+		E00000000000000000000006 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000002; remoteInfo = GameCore; };
+		E00000000000000000000007 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000002; remoteInfo = GameCore; };
+		E00000000000000000000008 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000003; remoteInfo = Analysis; };
+		E00000000000000000000009 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000004; remoteInfo = Engine; };
+		E00000000000000000000010 = {isa = PBXContainerItemProxy; containerPortal = A00000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = C00000000000000000000004; remoteInfo = Engine; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D00000000000000000000001 /* QipanChess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QipanChess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00000000000000000000002 /* libGameCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGameCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00000000000000000000003 /* libAnalysis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnalysis.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00000000000000000000004 /* libEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00000000000000000000005 /* libInterface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInterface.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00000000000000000000006 /* stockfish */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Resources/Engines/stockfish; sourceTree = "<group>"; };
+		D00000000000000000000007 /* QipanStockfishBridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Vendor/QipanStockfishBridge.xcframework; sourceTree = "<group>"; };
+		D00000000000000000000008 /* nn-c288c895ea92.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = Resources/Engines/Mobile/nn-c288c895ea92.nnue; sourceTree = "<group>"; };
+		D00000000000000000000009 /* nn-37f18f62d772.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = Resources/Engines/Mobile/nn-37f18f62d772.nnue; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F00000000000000000000001 /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; path = QipanChessApp/App; sourceTree = "<group>"; };
+		F00000000000000000000002 /* GameCore */ = {isa = PBXFileSystemSynchronizedRootGroup; path = QipanChessApp/GameCore; sourceTree = "<group>"; };
+		F00000000000000000000003 /* Analysis */ = {isa = PBXFileSystemSynchronizedRootGroup; path = QipanChessApp/Analysis; sourceTree = "<group>"; };
+		F00000000000000000000004 /* Engine */ = {isa = PBXFileSystemSynchronizedRootGroup; path = QipanChessApp/Engine; sourceTree = "<group>"; };
+		F00000000000000000000005 /* Interface */ = {isa = PBXFileSystemSynchronizedRootGroup; path = QipanChessApp/Interface; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000006,); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000003 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000004 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000007,); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000005 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A20000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000001 /* App */,
+				F00000000000000000000002 /* GameCore */,
+				F00000000000000000000003 /* Analysis */,
+				F00000000000000000000004 /* Engine */,
+				F00000000000000000000005 /* Interface */,
+				D00000000000000000000006 /* stockfish */,
+				D00000000000000000000007 /* QipanStockfishBridge.xcframework */,
+				D00000000000000000000008 /* nn-c288c895ea92.nnue */,
+				D00000000000000000000009 /* nn-37f18f62d772.nnue */,
+				A20000000000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A20000000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D00000000000000000000001 /* QipanChess.app */,
+				D00000000000000000000002 /* libGameCore.a */,
+				D00000000000000000000003 /* libAnalysis.a */,
+				D00000000000000000000004 /* libEngine.a */,
+				D00000000000000000000005 /* libInterface.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C00000000000000000000001 /* QipanChess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30000000000000000000002 /* Build configuration list for PBXNativeTarget "QipanChess" */;
+			buildPhases = (A10000000000000000000011 /* Sources */, A10000000000000000000001 /* Frameworks */, A10000000000000000000021 /* Resources */,);
+			buildRules = ();
+			dependencies = (E10000000000000000000001, E10000000000000000000002, E10000000000000000000003, E10000000000000000000004,);
+			fileSystemSynchronizedGroups = (F00000000000000000000001 /* App */,);
+			name = QipanChess;
+			packageProductDependencies = ();
+			productName = QipanChess;
+			productReference = D00000000000000000000001 /* QipanChess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C00000000000000000000002 /* GameCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30000000000000000000003;
+			buildPhases = (A10000000000000000000012 /* Sources */, A10000000000000000000002 /* Frameworks */,);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (F00000000000000000000002 /* GameCore */,);
+			name = GameCore;
+			packageProductDependencies = ();
+			productName = GameCore;
+			productReference = D00000000000000000000002 /* libGameCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C00000000000000000000003 /* Analysis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30000000000000000000004;
+			buildPhases = (A10000000000000000000013 /* Sources */, A10000000000000000000003 /* Frameworks */,);
+			buildRules = ();
+			dependencies = (E10000000000000000000005, E10000000000000000000010,);
+			fileSystemSynchronizedGroups = (F00000000000000000000003 /* Analysis */,);
+			name = Analysis;
+			packageProductDependencies = ();
+			productName = Analysis;
+			productReference = D00000000000000000000003 /* libAnalysis.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C00000000000000000000004 /* Engine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30000000000000000000005;
+			buildPhases = (A10000000000000000000014 /* Sources */, A10000000000000000000004 /* Frameworks */,);
+			buildRules = ();
+			dependencies = (E10000000000000000000006,);
+			fileSystemSynchronizedGroups = (F00000000000000000000004 /* Engine */,);
+			name = Engine;
+			packageProductDependencies = ();
+			productName = Engine;
+			productReference = D00000000000000000000004 /* libEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C00000000000000000000005 /* Interface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30000000000000000000006;
+			buildPhases = (A10000000000000000000015 /* Sources */, A10000000000000000000005 /* Frameworks */,);
+			buildRules = ();
+			dependencies = (E10000000000000000000007, E10000000000000000000008, E10000000000000000000009,);
+			fileSystemSynchronizedGroups = (F00000000000000000000005 /* Interface */,);
+			name = Interface;
+			packageProductDependencies = ();
+			productName = Interface;
+			productReference = D00000000000000000000005 /* libInterface.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					C00000000000000000000001 = {CreatedOnToolsVersion = 26.6; };
+					C00000000000000000000002 = {CreatedOnToolsVersion = 26.6; };
+					C00000000000000000000003 = {CreatedOnToolsVersion = 26.6; };
+					C00000000000000000000004 = {CreatedOnToolsVersion = 26.6; };
+					C00000000000000000000005 = {CreatedOnToolsVersion = 26.6; };
+				};
+			};
+			buildConfigurationList = A30000000000000000000001 /* Build configuration list for PBXProject "QipanChess" */;
+			developmentRegion = zh_Hans;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base, zh_Hans,);
+			mainGroup = A20000000000000000000001;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A20000000000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (C00000000000000000000001, C00000000000000000000002, C00000000000000000000003, C00000000000000000000004, C00000000000000000000005,);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000021 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000005 /* stockfish in Resources */, B00000000000000000000008 /* nn-c288c895ea92.nnue in Resources */, B00000000000000000000009 /* nn-37f18f62d772.nnue in Resources */,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000011 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000012 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000013 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000014 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000015 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E10000000000000000000001 = {isa = PBXTargetDependency; target = C00000000000000000000002 /* GameCore */; targetProxy = E00000000000000000000001; };
+		E10000000000000000000002 = {isa = PBXTargetDependency; target = C00000000000000000000003 /* Analysis */; targetProxy = E00000000000000000000002; };
+		E10000000000000000000003 = {isa = PBXTargetDependency; target = C00000000000000000000004 /* Engine */; targetProxy = E00000000000000000000003; };
+		E10000000000000000000004 = {isa = PBXTargetDependency; target = C00000000000000000000005 /* Interface */; targetProxy = E00000000000000000000004; };
+		E10000000000000000000005 = {isa = PBXTargetDependency; target = C00000000000000000000002 /* GameCore */; targetProxy = E00000000000000000000005; };
+		E10000000000000000000006 = {isa = PBXTargetDependency; target = C00000000000000000000002 /* GameCore */; targetProxy = E00000000000000000000006; };
+		E10000000000000000000007 = {isa = PBXTargetDependency; target = C00000000000000000000002 /* GameCore */; targetProxy = E00000000000000000000007; };
+		E10000000000000000000008 = {isa = PBXTargetDependency; target = C00000000000000000000003 /* Analysis */; targetProxy = E00000000000000000000008; };
+		E10000000000000000000009 = {isa = PBXTargetDependency; target = C00000000000000000000004 /* Engine */; targetProxy = E00000000000000000000009; };
+		E10000000000000000000010 = {isa = PBXTargetDependency; target = C00000000000000000000004 /* Engine */; targetProxy = E00000000000000000000010; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A40000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_OPTIMIZATION_LEVEL = 0; ONLY_ACTIVE_ARCH = YES; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		A40000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; SWIFT_COMPILATION_MODE = wholemodule; VALIDATE_PRODUCT = YES; }; name = Release; };
+
+		A40000000000000000000011 /* Debug app */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = YES; ENABLE_HARDENED_RUNTIME = YES; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "棋盘分析"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games"; INFOPLIST_KEY_NSMainStoryboardFile = ""; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks"; MACOSX_DEPLOYMENT_TARGET = 14.0; MARKETING_VERSION = 1.0; OTHER_LDFLAGS = "$(inherited) -lc++"; PRODUCT_BUNDLE_IDENTIFIER = com.example.qipan.QipanChess; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A40000000000000000000012 /* Release app */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = YES; ENABLE_HARDENED_RUNTIME = YES; ENABLE_PREVIEWS = YES; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "棋盘分析"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games"; INFOPLIST_KEY_NSMainStoryboardFile = ""; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks"; MACOSX_DEPLOYMENT_TARGET = 14.0; MARKETING_VERSION = 1.0; OTHER_LDFLAGS = "$(inherited) -lc++"; PRODUCT_BUNDLE_IDENTIFIER = com.example.qipan.QipanChess; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+
+		A40000000000000000000021 /* Debug GameCore */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = GameCore; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A40000000000000000000022 /* Release GameCore */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = GameCore; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A40000000000000000000031 /* Debug Analysis */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Analysis; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A40000000000000000000032 /* Release Analysis */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Analysis; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A40000000000000000000041 /* Debug Engine */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Engine; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A40000000000000000000042 /* Release Engine */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Engine; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A40000000000000000000051 /* Debug Interface */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Interface; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A40000000000000000000052 /* Release Interface */ = {isa = XCBuildConfiguration; buildSettings = {DEFINES_MODULE = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MACOSX_DEPLOYMENT_TARGET = 14.0; MACH_O_TYPE = staticlib; PRODUCT_MODULE_NAME = Interface; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A30000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000001, A40000000000000000000002,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A30000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000011, A40000000000000000000012,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A30000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000021, A40000000000000000000022,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A30000000000000000000004 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000031, A40000000000000000000032,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A30000000000000000000005 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000041, A40000000000000000000042,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A30000000000000000000006 = {isa = XCConfigurationList; buildConfigurations = (A40000000000000000000051, A40000000000000000000052,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}

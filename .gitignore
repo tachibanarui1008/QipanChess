@@ -1,0 +1,18 @@
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+
+# Prepared engine assets. Run Scripts/prepare-engines.sh after cloning.
+Resources/Engines/stockfish
+Resources/Engines/Mobile/*.nnue
+
+# Stockfish local build products.
+ThirdParty/Stockfish/sf_18/src/*.nnue
+ThirdParty/Stockfish/sf_18/src/stockfish
+ThirdParty/Stockfish/sf_18/src/stockfish.exe
+ThirdParty/Stockfish/sf_18/src/**/*.o
+ThirdParty/Stockfish/sf_18/src/.depend
+ThirdParty/Stockfish/sf_18/src/PGOBENCH.out
+ThirdParty/Stockfish/sf_18/src/profdir/

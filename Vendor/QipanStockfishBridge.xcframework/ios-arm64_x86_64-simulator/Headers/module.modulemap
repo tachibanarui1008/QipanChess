@@ -1,0 +1,4 @@
+module QipanStockfishBridge {
+    header "QipanStockfishBridge.h"
+    export *
+}
