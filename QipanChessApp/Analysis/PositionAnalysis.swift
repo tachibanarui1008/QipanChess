@@ -85,6 +85,8 @@ public struct PositionAnalysis: Equatable, Sendable {
     public let engineName: String
     public let elapsedMilliseconds: Int?
     public let nodes: Int?
+    public let candidates: [MoveCandidate]
+    public let strategies: [ChessStrategy]
 
     public init(
         evaluation: PositionEvaluation,
@@ -93,7 +95,9 @@ public struct PositionAnalysis: Equatable, Sendable {
         state: AnalysisState,
         engineName: String,
         elapsedMilliseconds: Int?,
-        nodes: Int?
+        nodes: Int?,
+        strategies: [ChessStrategy] = [],
+        candidates: [MoveCandidate] = []
     ) {
         self.evaluation = evaluation
         self.bestLine = bestLine
@@ -102,6 +106,8 @@ public struct PositionAnalysis: Equatable, Sendable {
         self.engineName = engineName
         self.elapsedMilliseconds = elapsedMilliseconds
         self.nodes = nodes
+        self.strategies = strategies
+        self.candidates = candidates
     }
 
     public static func placeholder(
@@ -121,7 +127,8 @@ public struct PositionAnalysis: Equatable, Sendable {
             state: state,
             engineName: engineName,
             elapsedMilliseconds: nil,
-            nodes: nil
+            nodes: nil,
+            strategies: []
         )
     }
 }

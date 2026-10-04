@@ -125,12 +125,13 @@ public enum MoveGenerator {
             }
         }
 
-        return targets.map { target in
-            Move(
-                from: square,
-                to: target,
-                promotion: target.rank == promotionRank ? .queen : nil
-            )
+        return targets.flatMap { target -> [Move] in
+            if target.rank == promotionRank {
+                return [PieceKind.queen, .rook, .bishop, .knight].map {
+                    Move(from: square, to: target, promotion: $0)
+                }
+            }
+            return [Move(from: square, to: target)]
         }
     }
 

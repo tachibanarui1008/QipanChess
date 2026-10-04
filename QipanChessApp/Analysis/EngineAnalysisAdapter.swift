@@ -6,7 +6,8 @@ enum EngineAnalysisAdapter {
     static func make(
         result: EngineResult,
         position: GamePosition,
-        engineName: String
+        engineName: String,
+        strategyOverride: StrategyType? = nil
     ) -> PositionAnalysis {
         let advantage = normalize(result.score, sideToMove: position.sideToMove)
         let principalVariation = result.principalVariation
@@ -15,6 +16,20 @@ enum EngineAnalysisAdapter {
         let continuation = principalVariation.count > 2
             ? Array(principalVariation.dropFirst(2).prefix(4))
             : []
+        let strategies: [ChessStrategy]
+        if let strategyOverride,
+           let strategy = StrategyClassifier.singleStrategy(
+               type: strategyOverride,
+               result: result,
+               position: position
+           ) {
+            strategies = [strategy]
+        } else {
+            strategies = StrategyClassifier.classify(
+                result: result,
+                position: position
+            )
+        }
 
         return PositionAnalysis(
             evaluation: PositionEvaluation(
@@ -32,7 +47,9 @@ enum EngineAnalysisAdapter {
             state: .ready,
             engineName: engineName,
             elapsedMilliseconds: result.elapsedMilliseconds,
-            nodes: result.nodes
+            nodes: result.nodes,
+            strategies: strategies,
+            candidates: MoveCandidate.make(result: result, position: position)
         )
     }
 

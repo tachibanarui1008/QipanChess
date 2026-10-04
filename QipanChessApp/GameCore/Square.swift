@@ -24,6 +24,17 @@ public struct Square: Hashable, Codable, Sendable, Comparable {
         )
     }
 
+    private enum CodingKeys: String, CodingKey { case file, rank }
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let file = try container.decode(Int.self, forKey: .file)
+        let rank = try container.decode(Int.self, forKey: .rank)
+        guard let square = Square(file: file, rank: rank) else {
+            throw DecodingError.dataCorruptedError(forKey: .file, in: container, debugDescription: "Square outside the board")
+        }
+        self = square
+    }
+
     public var notation: String {
         let fileIndex = "abcdefgh".index("abcdefgh".startIndex, offsetBy: file)
         return "\("abcdefgh"[fileIndex])\(rank + 1)"

@@ -1,17 +1,67 @@
 import Foundation
 import GameCore
 
+public struct EnginePositionHistory: Equatable, Sendable {
+    public let initialFEN: String
+    public let moves: [Move]
+    public init(initialFEN: String, moves: [Move]) { self.initialFEN = initialFEN; self.moves = moves }
+}
+
+public struct EngineWDL: Equatable, Sendable {
+    public let wins: Int
+    public let draws: Int
+    public let losses: Int
+    public init?(wins: Int, draws: Int, losses: Int) {
+        guard wins >= 0, draws >= 0, losses >= 0, wins + draws + losses > 0 else { return nil }
+        self.wins = wins; self.draws = draws; self.losses = losses
+    }
+    public var expectedPoints: Double { (Double(wins) + 0.5 * Double(draws)) / Double(wins + draws + losses) }
+}
+
 public struct AnalysisLimit: Equatable, Sendable {
     public let depth: Int
+    public let multiPV: Int
+    public let rootMoves: [Move]
+    public let history: EnginePositionHistory?
 
-    public init(depth: Int = 16) {
+    public init(depth: Int = 16, multiPV: Int = 1, rootMoves: [Move] = [], history: EnginePositionHistory? = nil) {
         self.depth = depth
+        self.multiPV = max(1, multiPV)
+        self.rootMoves = rootMoves
+        self.history = history
     }
 }
 
 public enum EngineScore: Equatable, Sendable {
     case centipawns(Int)
     case mate(Int)
+}
+
+public struct EngineVariation: Equatable, Sendable, Identifiable {
+    public let rank: Int
+    public let score: EngineScore
+    public let depth: Int
+    public let principalVariation: [Move]
+    public let winProbability: Double?
+    public let wdl: EngineWDL?
+
+    public init(
+        rank: Int,
+        score: EngineScore,
+        depth: Int,
+        principalVariation: [Move],
+        winProbability: Double? = nil,
+        wdl: EngineWDL? = nil
+    ) {
+        self.rank = rank
+        self.score = score
+        self.depth = depth
+        self.principalVariation = principalVariation
+        self.winProbability = winProbability
+        self.wdl = wdl
+    }
+
+    public var id: Int { rank }
 }
 
 public struct EngineResult: Equatable, Sendable {
@@ -21,6 +71,7 @@ public struct EngineResult: Equatable, Sendable {
     public let principalVariation: [Move]
     public let elapsedMilliseconds: Int
     public let nodes: Int
+    public let variations: [EngineVariation]
 
     public init(
         score: EngineScore,
@@ -28,7 +79,8 @@ public struct EngineResult: Equatable, Sendable {
         bestMove: Move?,
         principalVariation: [Move],
         elapsedMilliseconds: Int,
-        nodes: Int
+        nodes: Int,
+        variations: [EngineVariation] = []
     ) {
         self.score = score
         self.depth = depth
@@ -36,6 +88,7 @@ public struct EngineResult: Equatable, Sendable {
         self.principalVariation = principalVariation
         self.elapsedMilliseconds = elapsedMilliseconds
         self.nodes = nodes
+        self.variations = variations
     }
 }
 

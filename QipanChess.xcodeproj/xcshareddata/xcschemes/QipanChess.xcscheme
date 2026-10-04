@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C00000000000000000000001"
-               BuildableName = "QipanChess.app"
+               BuildableName = "神之一手.app"
                BlueprintName = "QipanChess"
                ReferencedContainer = "container:QipanChess.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C00000000000000000000001"
-            BuildableName = "QipanChess.app"
+            BuildableName = "神之一手.app"
             BlueprintName = "QipanChess"
             ReferencedContainer = "container:QipanChess.xcodeproj">
          </BuildableReference>
@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C00000000000000000000001"
-            BuildableName = "QipanChess.app"
+            BuildableName = "神之一手.app"
             BlueprintName = "QipanChess"
             ReferencedContainer = "container:QipanChess.xcodeproj">
          </BuildableReference>

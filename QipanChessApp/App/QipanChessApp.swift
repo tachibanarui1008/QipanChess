@@ -8,7 +8,7 @@ struct QipanChessApp: App {
             QipanRootView()
         }
         #if os(macOS)
-        .defaultSize(width: 1120, height: 780)
+        .defaultSize(width: 1360, height: 820)
         #endif
     }
 }
