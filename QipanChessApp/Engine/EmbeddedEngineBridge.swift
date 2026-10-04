@@ -93,13 +93,16 @@ public actor StockfishEmbeddedBridge: EmbeddedEngineBridge {
             nodes: 0
         )
 
-        let status = fen.withCString { fenPointer in
-            qipan_stockfish_analyze(
-                context,
-                fenPointer,
-                Int32(limit.depth),
-                &nativeResult
-            )
+        let initialFen = limit.history?.initialFEN ?? fen
+        let historyMoves = limit.history?.moves.map(\.uci).joined(separator: " ") ?? ""
+        let rootMoves = limit.rootMoves.map(\.uci).joined(separator: " ")
+        let status = initialFen.withCString { fenPointer in
+            historyMoves.withCString { historyPointer in
+                rootMoves.withCString { rootsPointer in
+                    qipan_stockfish_analyze_position(context, fenPointer, historyPointer, rootsPointer,
+                                                    Int32(limit.depth), Int32(limit.multiPV), &nativeResult)
+                }
+            }
         }
 
         guard status == 0 else {
@@ -119,13 +122,63 @@ public actor StockfishEmbeddedBridge: EmbeddedEngineBridge {
             ? .mate(Int(nativeResult.scoreValue))
             : .centipawns(Int(nativeResult.scoreValue))
 
+        let variationCount = max(0, Int(qipan_stockfish_variation_count(context)))
+        var variations: [EngineVariation] = []
+        variations.reserveCapacity(variationCount)
+
+        for index in 0..<variationCount {
+            var nativeVariation = QipanStockfishVariation(
+                rank: 0,
+                scoreKind: 0,
+                scoreValue: 0,
+                depth: 0,
+                winPermille: -1,
+                drawPermille: -1,
+                lossPermille: -1
+            )
+            guard qipan_stockfish_variation(
+                context,
+                Int32(index),
+                &nativeVariation
+            ) == 0 else { continue }
+
+            let variationText = qipan_stockfish_variation_principal_variation(
+                context,
+                Int32(index)
+            ).map(String.init(cString:)) ?? ""
+            let moves = variationText
+                .split(separator: " ")
+                .compactMap { Move(uci: String($0)) }
+            guard !moves.isEmpty else { continue }
+
+            let variationScore: EngineScore = nativeVariation.scoreKind == 1
+                ? .mate(Int(nativeVariation.scoreValue))
+                : .centipawns(Int(nativeVariation.scoreValue))
+            let totalWDL = nativeVariation.winPermille
+                + nativeVariation.drawPermille
+                + nativeVariation.lossPermille
+            let winProbability = totalWDL > 0
+                ? Double(nativeVariation.winPermille) / Double(totalWDL)
+                : nil
+
+            variations.append(EngineVariation(
+                rank: Int(nativeVariation.rank),
+                score: variationScore,
+                depth: Int(nativeVariation.depth),
+                principalVariation: moves,
+                winProbability: winProbability,
+                wdl: EngineWDL(wins: Int(nativeVariation.winPermille), draws: Int(nativeVariation.drawPermille), losses: Int(nativeVariation.lossPermille))
+            ))
+        }
+
         return EngineResult(
             score: score,
             depth: Int(nativeResult.depth),
             bestMove: Move(uci: bestMoveText) ?? principalVariation.first,
             principalVariation: principalVariation,
             elapsedMilliseconds: Int(nativeResult.elapsedMilliseconds),
-            nodes: Int(clamping: nativeResult.nodes)
+            nodes: Int(clamping: nativeResult.nodes),
+            variations: variations.sorted { $0.rank < $1.rank }
         )
     }
 

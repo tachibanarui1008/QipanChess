@@ -12,7 +12,7 @@ public struct Move: Hashable, Codable, Sendable, Identifiable {
     }
 
     public init?(uci: String) {
-        guard uci.count >= 4 else { return nil }
+        guard (4...5).contains(uci.count) else { return nil }
         let characters = Array(uci)
         guard let from = Square(String(characters[0...1])),
               let to = Square(String(characters[2...3]))
